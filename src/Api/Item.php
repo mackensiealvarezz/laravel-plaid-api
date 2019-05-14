@@ -4,45 +4,39 @@ namespace Pkboom\LaravelPlaidApi\Api;
 
 class Item extends Api
 {
-    /**
-     * @var PublicToken
-     */
-    protected $publicToken;
-
-    /**
-     * @var AccessToken
-     */
-    protected $accessToken;
-
-    public function __construct($client)
+    public function getAccounts($accessToken)
     {
-        parent::__construct($client);
-
-        $this->publicToken = new PublicToken($client);
-        $this->accessToken = new AccessToken($client);
-    }
-
-    public function publicToken()
-    {
-        return $this->publicToken;
-    }
-
-    public function accessToken()
-    {
-        return $this->accessToken;
+        return $this->client->postWithAuth('/accounts/get', [
+            'access_token' => $accessToken,
+        ]);
     }
 
     public function get($accessToken)
     {
-        return $this->client()->post('/item/get', [
+        return $this->client->postWithAuth('/item/get', [
             'access_token' => $accessToken
         ]);
     }
 
-    public function delete($accessToken)
+    public function remove($accessToken)
     {
-        return $this->client()->post('/item/delete', [
+        return $this->client->postWithAuth('/item/remove', [
             'access_token' => $accessToken
+        ]);
+    }
+
+    public function invalidate($accessToken)
+    {
+        return $this->client->postWithAuth('/item/access_token/invalidate', [
+            'access_token' => $accessToken
+        ]);
+    }
+
+    public function update($accessToken, $webhook)
+    {
+        return $this->client->postWithAuth('/item/webhook/update', [
+            'access_token' => $accessToken,
+            'webhook' => $webhook,
         ]);
     }
 }

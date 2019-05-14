@@ -1,26 +1,40 @@
-# Very short description of the package
+# Plaid API for Laravel
 
-[![Latest Stable Version](https://poser.pugx.org/pkboom/laravel-calm/v/stable)](https://packagist.org/packages/pkboom/laravel-calm)
-[![Build Status](https://travis-ci.com/pkboom/laravel-calm.svg?branch=master)](https://travis-ci.com/pkboom/laravel-calm)
+## You can install the package via composer:
 
-This is where your description should go. Try and limit it to a paragraph or two.
+```
+composer require pkboom/laralve-plaid-api
+```
 
-## Installation
+## Setting up your Plaid Credentials
+Add your Plain client id, secret, public key, env to your config/services.php:
 
-You can install the package via composer:
-
-```bash
-composer require pkboom/laravel-plaid-api
+```
+// config/services.php
+...
+'Plain' => [
+    'id' => env('PLAID_CLIENT_ID', ''), 
+    'secret' => env('PLAID_SECRET', ''), 
+    'public_key' => env('PLAID_PUBLIC_KEY', ''), 
+    'env' => env('PLAID_ENV', 'sandbox'),
+],
+...
 ```
 
 ## Usage
 
-``` php
-$skeleton = new pkboom\LaravelPlaidApi();
-echo $skeleton->echoPhrase('Hello, pkboom!');
+Create a client:
+```
+$client = Client::create();
 ```
 
-## Requirements
+Exchange a public_token from Plaid Link for a Plaid access_token:
+```
+$response = $client->link()->exchange($publicToken);
+$accessToken = $response['access_token'];
+```
+
+Refer to [Plaid](https://plaid.com/docs/) and [dpods/plaid-api-php-client](https://github.com/dpods/plaid-api-php-client) for further information.
 
 ### Testing
 

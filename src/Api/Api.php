@@ -16,7 +16,7 @@ class Api
         $this->client = $client;
     }
 
-    protected function client()
+    public function client()
     {
         return $this->client;
     }

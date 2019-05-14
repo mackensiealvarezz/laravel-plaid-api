@@ -2,42 +2,31 @@
 
 namespace Pkboom\LaravelPlaidApi\Api;
 
-use ArrayObject;
-
 class Institutions extends Api
 {
-    public function get($count, $offset = 0, $options = null)
+    public function get($count = 10, $offset = 0, $options = [])
     {
-        $post = [
-            'count' => $count,
-            'offset' => $offset
-        ];
-        if ($options != null) {
-            $post['options'] = $options;
-        }
-        return $this->client()->post('/institutions/get', $post);
+        $post = array_merge(['count' => $count, 'offset' => $offset], $options);
+
+        return $this->client->postWithAuth('/institutions/get', $post);
     }
 
     public function getById($institutionId, $options = [])
     {
-        // This will map to a JSON object even if it's empty
-        $optionsObj = new ArrayObject($options);
-
-        return $this->client()->postPublicKey('/institutions/get_by_id', [
+        return $this->client->post('/institutions/get_by_id', [
+            'public_key' => $this->client->publicKey,
             'institution_id' => $institutionId,
-            'options' => $optionsObj
+            'options' => $options
         ]);
     }
 
-    public function search($query, $options = [], $products = null)
+    public function search($query, $products = null, $options = [])
     {
-        // This will map to a JSON object even if it's empty
-        $optionsObj = new ArrayObject($options);
-
-        return $this->client()->postPublicKey('/institutions/search', [
+        return $this->client->post('/institutions/search', [
             'query' => $query,
-            'options' => $optionsObj,
-            'products' => $products
+            'products' => $products,
+            'public_key' => $this->client->publicKey,
+            'options' => $options,
         ]);
     }
 }

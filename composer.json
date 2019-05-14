@@ -40,13 +40,6 @@
         "sort-packages": true
     },
     "extra": {
-        "laravel": {
-            "providers": [
-                "Pkboom\\LaravelPlaidApi\\LaravelPlaidApiServiceProvider"
-            ],
-            "aliases": {
-                "LaravelPlaidApi": "Pkboom\\LaravelPlaidApi\\Facade\\LaravelPlaidApi"
-            }
-        }
+        "laravel": {}
     }
 }
