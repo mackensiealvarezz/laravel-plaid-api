@@ -1,0 +1,52 @@
+{
+    "name": "pkboom/laravel-plaid-api",
+    "description": "",
+    "keywords": [
+        "pkboom",
+        "laravel-plaid-api"
+    ],
+    "homepage": "https://github.com/pkboom/laravel-plaid-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Keunbae Park",
+            "email": "ppotpo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "dwolla/dwollaswagger": "^1.0",
+        "kitetail/zttp": "^0.4.0",
+        "orchestra/testbench": "^3.8",
+        "symfony/var-dumper": "^4.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pkboom\\LaravelPlaidApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pkboom\\LaravelPlaidApi\\LaravelPlaidApiServiceProvider"
+            ],
+            "aliases": {
+                "LaravelPlaidApi": "Pkboom\\LaravelPlaidApi\\Facade\\LaravelPlaidApi"
+            }
+        }
+    }
+}
