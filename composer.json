@@ -17,7 +17,7 @@
         "php": "^7.1",
         "dwolla/dwollaswagger": "^1.0",
         "kitetail/zttp": "^0.4.0",
-        "orchestra/testbench": "^3.8",
+        "orchestra/testbench": "^5.0",
         "symfony/var-dumper": "^4.2"
     },
     "require-dev": {
