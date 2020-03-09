@@ -1,16 +1,16 @@
 {
-    "name": "pkboom/laravel-plaid-api",
+    "name": "greymattermack/laravel-plaid-api",
     "description": "",
     "keywords": [
         "pkboom",
         "laravel-plaid-api"
     ],
-    "homepage": "https://github.com/pkboom/laravel-plaid-api",
+    "homepage": "https://github.com/greymattermack/laravel-plaid-api",
     "license": "MIT",
     "authors": [
         {
-            "name": "Keunbae Park",
-            "email": "ppotpo@gmail.com"
+            "name": "Mackensie Alvarez",
+            "email": "greymattermack@gmail.com"
         }
     ],
     "require": {
