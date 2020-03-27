@@ -29,7 +29,7 @@ class Transactions extends Api{
             $optionsObj['offset'] = $offset;
         }
 
-        return $this->client()->post('/transactions/get', [
+        return $this->client->postWithAuth('/transactions/get', [
             'access_token' => $accessToken,
             'start_date' => $startDate,
             'end_date' => $endDate,
