@@ -1,11 +1,11 @@
 {
-    "name": "greymattermack/laravel-plaid-api",
+    "name": "mackensiealvarezz/laravel-plaid-api",
     "description": "",
     "keywords": [
         "pkboom",
         "laravel-plaid-api"
     ],
-    "homepage": "https://github.com/greymattermack/laravel-plaid-api",
+    "homepage": "https://github.com/mackensiealvarezz/laravel-plaid-api",
     "license": "MIT",
     "authors": [{
         "name": "Mackensie Alvarez",
@@ -38,6 +38,13 @@
         "sort-packages": true
     },
     "extra": {
-        "laravel": {}
+        "laravel": {
+            "providers": [
+                "Mackensiealvarezz\\Plaid\\TdameritradeServiceProvider"
+            ],
+            "aliases": {
+                "Tdameritrade": "Mackensiealvarezz\\Plaid\\Facades\\TdameritradeFacades"
+            }
+        }
     }
 }
