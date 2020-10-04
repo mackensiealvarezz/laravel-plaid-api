@@ -1,6 +1,6 @@
 <?php
 
-namespace Pkboom\LaravelPlaidApi\Api;
+namespace Mackensiealvarezz\Plaid\Api;
 
 class Categories extends Api
 {

@@ -1,19 +1,22 @@
 <?php
 
-namespace Pkboom\LaravelPlaidApi\Api;
+namespace Mackensiealvarezz\Plaid\Api;
+
 use ArrayObject;
 
-class Transactions extends Api{
+class Transactions extends Api
+{
 
 
-    public function get($accessToken,
-                        $startDate,
-                        $endDate,
-                        $options = [],
-                        $accountIds = null,
-                        $count = null,
-                        $offset = null)
-    {
+    public function get(
+        $accessToken,
+        $startDate,
+        $endDate,
+        $options = [],
+        $accountIds = null,
+        $count = null,
+        $offset = null
+    ) {
         // This will map to a JSON object even if it's empty
         $optionsObj = new ArrayObject($options);
 
@@ -36,7 +39,4 @@ class Transactions extends Api{
             'options' => $optionsObj,
         ]);
     }
-    
-    
-    
 }

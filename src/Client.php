@@ -1,6 +1,6 @@
 <?php
 
-namespace Pkboom\LaravelPlaidApi;
+namespace Mackensiealvarezz\Plaid;
 
 use Zttp\Zttp;
 use Pkboom\LaravelPlaidApi\Exceptions\PlaidException;

@@ -7,12 +7,10 @@
     ],
     "homepage": "https://github.com/greymattermack/laravel-plaid-api",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Mackensie Alvarez",
-            "email": "greymattermack@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Mackensie Alvarez",
+        "email": "greymattermack@gmail.com"
+    }],
     "require": {
         "php": "^7.1",
         "dwolla/dwollaswagger": "^1.0",
@@ -25,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pkboom\\LaravelPlaidApi\\": "src"
+            "MackensieAlvarezz\\Plaid\\": "src"
         }
     },
     "autoload-dev": {

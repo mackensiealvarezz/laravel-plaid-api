@@ -1,6 +1,6 @@
 <?php
 
-namespace Pkboom\LaravelPlaidApi\Api;
+namespace Mackensiealvarezz\Plaid\Api;
 
 /**
  * @link https://plaid.com/docs/#assets
