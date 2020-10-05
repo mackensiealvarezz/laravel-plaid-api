@@ -62,8 +62,10 @@ class Plaid
 
     public function post($path, $data = [])
     {
-        $response = Client::post($this->url($path), $data);
-
+        // $response = new Client()->request('post', default = null)
+        //post($this->url($path), $data);
+        $client = new Client();
+        $response = $client->request('post', $this->url($path), $data);
         if (array_key_exists('error_type', json_decode($response->getBody(), true))) {
             throw PlaidException::fromResponse($response);
         }
