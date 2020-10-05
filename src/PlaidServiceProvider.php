@@ -5,7 +5,7 @@ namespace Mackensiealvarezz\Plaid;
 use illuminate\support\ServiceProvider;
 use Mackensiealvarezz\Plaid\Plaid;
 
-class TdameritradeServiceProvider extends ServiceProvider
+class PlaidServiceProvider extends ServiceProvider
 {
 
 
