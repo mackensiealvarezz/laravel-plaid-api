@@ -7,8 +7,6 @@ use Mackensiealvarezz\Plaid\Plaid;
 
 class PlaidServiceProvider extends ServiceProvider
 {
-
-
     //when the application is loaded
     public function boot()
     {
