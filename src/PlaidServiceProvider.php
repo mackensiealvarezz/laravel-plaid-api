@@ -3,7 +3,7 @@
 namespace Mackensiealvarezz\Plaid;
 
 use illuminate\support\ServiceProvider;
-use Pkboom\LaravelPlaidApi\Client;
+use Mackensiealvarezz\Plaid\Plaid;
 
 class TdameritradeServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class TdameritradeServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('plaid', function () {
-            return new Client();
+            return new Plaid();
         });
     }
 }

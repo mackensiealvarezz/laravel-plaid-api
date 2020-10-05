@@ -39,10 +39,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mackensiealvarezz\\Plaid\\TdameritradeServiceProvider"
+                "Mackensiealvarezz\\Plaid\\PlaidServiceProvider"
             ],
             "aliases": {
-                "Tdameritrade": "Mackensiealvarezz\\Plaid\\Facades\\TdameritradeFacades"
+                "Tdameritrade": "Mackensiealvarezz\\Plaid\\Facades\\PlaidFacades"
             }
         }
     }
