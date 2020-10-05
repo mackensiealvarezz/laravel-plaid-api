@@ -2,10 +2,12 @@
 
 namespace Mackensiealvarezz\Plaid;
 
-use Zttp\Zttp;
-use Pkboom\LaravelPlaidApi\Exceptions\PlaidException;
+use Exception;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Mackensiealvarezz\Plaid\Exceptions\PlaidException;
 
-class Client
+class Plaid
 {
     /**
      * @var string
@@ -60,13 +62,13 @@ class Client
 
     public function post($path, $data = [])
     {
-        $response = Zttp::post($this->url($path), $data)->json();
+        $response = Client::post($this->url($path), $data);
 
-        if (array_key_exists('error_type', $response)) {
+        if (array_key_exists('error_type', json_decode($response->getBody(), true))) {
             throw PlaidException::fromResponse($response);
         }
 
-        return $response;
+        return json_decode($response->getBody(), true);
     }
 
     public function url($url)
